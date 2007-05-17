@@ -1,0 +1,22 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1902
+
+Vim filetype plugin enhancement
+Language: skill (cadence extension language)
+
+Type ");" in Insert mode to insert the word located before the matching "(".
+For selected keywords this also adds the argument (following the keyword).
+To work properly, keyword and argument must be found on the same line.
+
+Example:
+
+procedure( vscCheckpointHier( @key lib cell view message inclibs )
+    let(( ddCVs )
+        vscPrint0(sprintf( nil "Hierarchy for %s,%s,%s ..." lib cell view ))
+        when( ddCVs = vscGetHierarchyDDs( ?lib lib ?cell cell ?view view
+                                          ?inclibs inclibs )
+            vscPrint0(sprintf( nil "  %d cellviews." length(ddCVs) ))
+            vscCheckpoint( ddCVs ?message message)
+        ); when ddCVs
+    ); let
+); procedure vscCheckpointHier
+
